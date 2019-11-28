@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<!-- Form View -->
+		<record model="ir.ui.view" id="gym_gymclass_form">
+			<field name="name">Classes</field>
+			<field name="model">gym.gymclass</field>
+			<field name="arch" type="xml">
+				<form string="Form of gymclasses">
+					<group string="Classes">
+						<field name="name" />
+						<field name="start" />
+						<field name="end" />
+						<field name="capacity" />
+						<field name="activityType" />
+						<field name="gyminstructor_id" />
+					</group>
+					<field name="gymuser_ids" nolabel="1" colspan="4">
+						<tree>
+							<field name="name" />
+							<field name="idcard" />
+						</tree>
+					</field>
+				</form>
+			</field>
+		</record>
+		<!-- Tree View -->
+		<record model="ir.ui.view" id="gym_gymclass_tree">
+			<field name="name">Classes</field>
+			<field name="model">gym.gymclass</field>
+			<field name="arch" type="xml">
+				<tree string="List of gymclasses">
+					<field name="name" />
+					<field name="start" />
+					<field name="end" />
+					<field name="capacity" />
+					<field name="activityType" />
+					<field name="gyminstructor_id" />
+					<field name="gymuser_ids" />
+				</tree>
+			</field>
+		</record>
+		<!-- Calendar View -->
+		<record model="ir.ui.view" id="view_gym_gymclass_calendar">
+			<field name="name">view_gym_gymclass_calendar</field>
+			<field name="model">gym.gymclass</field>
+			<field name="type">calendar</field>
+			<field name="arch" type="xml">
+				<calendar string="Clases" color="activityType"
+					date_start="start" date_stop="end" mode="month">
+					<field name="name" />
+					<field name="capacity" />
+				</calendar>
+			</field>
+		</record>
+		<!-- Search View -->
+		<record model="ir.ui.view" id="view_gym_gymclass_search">
+			<field name="name">view_gym_gymclass_search</field>
+			<field name="model">gym.gymclass</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Classes">
+					<filter string="Capacity >10" domain="[('capacity','>',10)]" />
+					<separator orientation="vertical" />
+					<field name="gymuser_ids" />
+					<group expand="0" string="Agrupar por…">
+						<filter name="group_by_instructor" string="Instructor"
+							context="{'group_by':'gyminstructor_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<!-- Acciones -->
+		<record id="act_gymclass" model="ir.actions.act_window">
+			<field name="name">Gym Classes</field>
+			<field name="res_model">gym.gymclass</field>
+			<field name="view_mode">tree,form,calendar</field>
+			<field name="search_view_id" ref="view_gym_gymclass_search" />
+		</record>
+
+		<!-- Menu -->
+		<menuitem id="gym" name="Gym" action="act_gymclass" />
+		<menuitem name="Classes" id="gymclasses_submenu" parent="gym"
+			sequence="100" />
+		<menuitem name="Ver clases" id="gymclasses_submenu_2"
+			parent="gymclasses_submenu" sequence="100" action="act_gymclass" />
+	</data>
+</odoo> 

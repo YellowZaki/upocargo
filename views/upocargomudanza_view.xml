@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<!-- Form View -->
+		<record model="ir.ui.view"
+			id="upocargo_upocargomudanza_form">
+			<field name="name">upocargo_upocargomudanza_form</field>
+			<field name="model">upocargo.upocargomudanza</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de mudanzas">
+					<group string="Mudanza">
+						<field name="name" />
+						<field name="precio" />
+						<field name="fecha" />
+					</group>
+
+				</form>
+			</field>
+		</record>
+		<!-- Tree View -->
+		<record model="ir.ui.view"
+			id="upocargo_upocargomudanza_tree">
+			<field name="name">upocargo_upocargomudanza_tree</field>
+			<field name="model">upocargo.upocargomudanza</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de servicios">
+					<field name="name" />
+					<field name="precio" />
+					<field name="fecha" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Calendar View -->
+		<record model="ir.ui.view"
+			id="upocargo_upocargomudanza_calendar">
+			<field name="name">upocargo_upocargomudanza_calendar</field>
+			<field name="model">upocargo.upocargomudanza</field>
+			<field name="type">calendar</field>
+			<field name="arch" type="xml">
+				<calendar string="Clases" date_start="fecha" mode="month">
+					<field name="name" />
+					<field name="precio" />
+				</calendar>
+			</field>
+		</record>
+
+		<!-- Acciones -->
+		<record id="act_upocargomudanza" model="ir.actions.act_window">
+			<field name="name">Mudanzas</field>
+			<field name="res_model">upocargo.upocargomudanza</field>
+			<field name="view_mode">tree,form,calendar</field>
+		</record>
+
+		<!-- Menu -->
+		<menuitem id="upocargo" name="UPOCARGO"
+			action="act_upocargomudanza" />
+		<menuitem name="Servicios" id="servicios_submenu"
+			parent="upocargo" sequence="100" />					
+		<menuitem name="Ver mudanzas" id="upocargomudanza_submenu"
+			parent="servicios_submenu" sequence="100" action="act_upocargomudanza" />
+	</data>
+</odoo> 

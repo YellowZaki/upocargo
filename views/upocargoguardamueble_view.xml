@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<!-- Form View -->
+		<record model="ir.ui.view"
+			id="upocargo_upocargoguardamueble_form">
+			<field name="name">upocargo_upocargoguardamueble_form</field>
+			<field name="model">upocargo.upocargoguardamueble</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Formulario del servicio">
+				<group string="Guardamueble">				
+					<field name="name" />
+					<field name="precio" />
+					<field name="fecha_deposito" />
+					<field name="fecha_recogida" />
+					</group>
+				</form>
+				
+			</field>
+		</record>
+		<!-- Tree View -->
+		<record model="ir.ui.view"
+			id="upocargo_upocargoguardamueble_tree">
+			<field name="name">upocargo_upocargoguardamueble_tree</field>
+			<field name="model">upocargo.upocargoguardamueble</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de guardamuebles">
+					<field name="name" />
+					<field name="precio" />
+					<field name="fecha_deposito" />
+					<field name="fecha_recogida" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Calendar View -->
+		<record model="ir.ui.view"
+			id="upocargo_upocargoguardamueble_calendar">
+			<field name="name">upocargo_upocargomudanza_calendar</field>
+			<field name="model">upocargo.upocargoguardamueble</field>
+			<field name="type">calendar</field>
+			<field name="arch" type="xml">
+				<calendar string="Clases" date_start="fecha_deposito"
+					date_stop="fecha_recogida" mode="month">
+					<field name="name" />
+					<field name="precio" />
+				</calendar>
+			</field>
+		</record>
+
+		<!-- Acciones -->
+		<record id="act_upocargoguardamueble"
+			model="ir.actions.act_window">
+			<field name="name">Guardamueble</field>
+			<field name="res_model">upocargo.upocargoguardamueble</field>
+			<field name="view_mode">tree,form,calendar</field>
+		</record>
+
+		<!-- Menu -->
+		<menuitem name="Ver guardamuebles"
+			id="upocargoguardamueble_submenu" parent="servicios_submenu"
+			sequence="100" action="act_upocargoguardamueble" />
+	</data>
+</odoo> 
