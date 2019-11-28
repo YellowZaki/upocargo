@@ -2,16 +2,12 @@
 {
     'name': "upocargo",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'summary': "Gestion de mudanzas",
 
-    'description': """
-        Long description of module's purpose
-    """,
+    'description': "Crear mudanzas, administrar clientes...",
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "UPO",
+    'website': "http://www.upo.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/11.0/odoo/addons/base/module/module_data.xml
@@ -32,4 +28,5 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'application': True,
 }
