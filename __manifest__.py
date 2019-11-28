@@ -23,6 +23,7 @@
         # 'security/ir.model.access.csv',
         'views/upocargomudanza_view.xml',
         'views/upocargoguardamueble_view.xml'
+        'views/upocargocliente_view.xml'
         
         #'views/templates.xml',
     ],
