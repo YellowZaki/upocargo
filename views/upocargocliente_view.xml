@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<!-- Form View -->
+		<record model="ir.ui.view" id="upocargo_upocargocliente_form">
+			<field name="name">upocargo_upocargocliente_form</field>
+			<field name="model">upocargo.upocargocliente</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Formulario del CLiente">
+					<group string="Cliente">
+						<field name="DNI" />
+						<field name="name" />
+						<field name="apellidos" />
+						<field name="direccion" />
+						<newline />
+						<field name="servicio_ids" />
+					</group>
+				</form>
+
+			</field>
+		</record>
+		<!-- Tree View -->
+		<record model="ir.ui.view"
+			id="upocargo_upocargocliente_tree">
+			<field name="name">upocargo_upocargocliente_tree</field>
+			<field name="model">upocargo.upocargocliente</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de clientes">
+						<field name="DNI" />
+						<field name="name" />
+						<field name="apellidos" />
+						<field name="direccion" />
+						<field name="servicio_ids" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Search View -->
+		<record model="ir.ui.view"
+			id="upocargo_upocargocliente_search">
+			<field name="name">upocargo_upocargocliente_search</field>
+			<field name="model">upocargo.upocargocliente</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Búsqueda">
+					<separator orientation="vertical" />
+					<field name="DNI" />
+					<field name="name" />
+					<field name="apellidos" />
+				</search>
+			</field>
+		</record>
+
+		<!-- Acciones -->
+		<record id="act_upocargocliente"
+			model="ir.actions.act_window">
+			<field name="name">Cliente</field>
+			<field name="res_model">upocargo.upocargocliente</field>
+			<field name="view_mode">tree,form,search</field>
+		</record>
+
+		<!-- Menu -->
+		<menuitem name="Ver clientes"
+			id="upocargocliente_submenu"
+			sequence="100" action="act_upocargocliente" />
+	</data>
+</odoo> 
