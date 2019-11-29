@@ -31,25 +31,29 @@
 			<field name="name">Alberto</field>
 			<field name="DNI">372637T</field>
 			<field name="apellidos">Gómez Cabrera</field>
-			<field name="direccion">Calle Corredera 12 Arahal</field>
+			<field name="ciudad">Arahal</field>
+			<field name="direccion">Calle Corredera 12</field>
 		</record>
 		<record id="cliente1" model="upocargo.upocargocliente">
 			<field name="name">María</field>
 			<field name="DNI">293837A</field>
 			<field name="apellidos">González Vera</field>
-			<field name="direccion">Calle San Roque 41 Marchena</field>
+			<field name="ciudad">Marchena</field>
+			<field name="direccion">Calle San Roque 41</field>
 		</record>
 		<record id="cliente2" model="upocargo.upocargocliente">
 			<field name="name">Juan</field>
 			<field name="DNI">93847B</field>
 			<field name="apellidos">Herrera Brey</field>
-			<field name="direccion">Calle Fuente 65 Sevilla</field>
+			<field name="ciudad">Sevilla</field>
+			<field name="direccion">Calle Fuente 65</field>
 		</record>
 		<record id="cliente3" model="upocargo.upocargocliente">
 			<field name="name">Pepe</field>
 			<field name="DNI">89372U</field>
 			<field name="apellidos">Rodriguez Gallardo</field>
-			<field name="direccion">Calle Faro 3 Paradas</field>
+			<field name="ciudad">Paradas</field>
+			<field name="direccion">Calle Faro 3</field>
 		</record>
 		<record id="mudanza0" model="upocargo.upocargomudanza">
 			<field name="name">Mudanza 1</field>
