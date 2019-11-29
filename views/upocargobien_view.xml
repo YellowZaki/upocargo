@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record model="ir.ui.view" id="upocargo_upocargobien_form">
+            <field name="name">upocargo_upocargobien_form</field>
+            <field name="model">upocargo.upocargobien</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Bien">
+                    <group string="Bien">
+                         <group>
+                            <field name="name" />
+                            <field name="metros_cubicos" /> 
+                            <field name="tipo" />
+                        </group>
+                        <newline />
+                    </group>
+                </form>
+
+            </field>
+        </record>
+		<!-- Tree View -->
+        <record model="ir.ui.view"
+            id="upocargo_upocargobien_tree">
+            <field name="name">upocargo_upocargobien_tree</field>
+            <field name="model">upocargo.upocargobien</field>
+            <field name="arch" type="xml">
+                <tree string="Bienes">
+                        <field name="name" />
+                        <field name="metros_cubicos" />
+                        <field name="tipo" />
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Acciones -->
+        <record id="act_upocargobien"
+            model="ir.actions.act_window">
+            <field name="name">Bien</field>
+            <field name="res_model">upocargo.upocargobien</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- Menu -->
+        <menuitem name="Bienes" id="bienes_submenu"
+            parent="upocargo" sequence="100" />                    
+        <menuitem name="Ver bienes" id="upocargobien_submenu"
+            parent="bienes_submenu" sequence="100" action="act_upocargobien" />
+    </data>
+</odoo> 

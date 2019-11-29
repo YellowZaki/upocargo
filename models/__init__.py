@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from . import upocargobien
 from . import upocargoservicio
 from . import upocargoguardamueble
 from . import upocargomudanza

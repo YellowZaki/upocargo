@@ -48,13 +48,25 @@
 				</calendar>
 			</field>
 		</record>
+		
+		<!-- Gantt View NO FUNCIONA EN ODOO YA, SOLO EN LA VERSION ENTERPRISE-->
+		<record model="ir.ui.view"
+			id="upocargo_upocargoguardamueble_gantt">
+			<field name="name">upocargo_upocargomudanza_gantt</field>
+			<field name="model">upocargo.upocargoguardamueble</field>
+			<field name="type">gantt</field>
+			<field name="arch" type="xml">
+				<gantt string="Clases" date_start="fecha_deposito"
+					date_stop="fecha_recogida"/>
+			</field>
+		</record>		
 
 		<!-- Acciones -->
 		<record id="act_upocargoguardamueble"
 			model="ir.actions.act_window">
 			<field name="name">Guardamueble</field>
 			<field name="res_model">upocargo.upocargoguardamueble</field>
-			<field name="view_mode">tree,form,calendar</field>
+			<field name="view_mode">tree,form,calendar,gantt</field>
 		</record>
 
 		<!-- Menu -->

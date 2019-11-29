@@ -11,11 +11,14 @@
 						<page string="Datos del servicio">
 							<group string="Servicio">
 								<field name="name" />
-								<field type="char" name="precio"  />
+								<field type="char" name="precio" />
 							</group>
 						</page>
 						<page string="Cliente">
 							<field name="upocargocliente_id" />
+						</page>
+						<page string="Bienes">
+							<field name="upocargobien_ids" />
 						</page>
 					</notebook>
 

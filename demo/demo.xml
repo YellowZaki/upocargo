@@ -1,30 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data>
-        <!--  -->
-        <!--   <record id="object0" model="upocargo.upocargo"> -->
-        <!--     <field name="name">Object 0</field> -->
-        <!--     <field name="value">0</field> -->
-        <!--   </record> -->
-        <!--  -->
-        <!--   <record id="object1" model="upocargo.upocargo"> -->
-        <!--     <field name="name">Object 1</field> -->
-        <!--     <field name="value">10</field> -->
-        <!--   </record> -->
-        <!--  -->
-        <!--   <record id="object2" model="upocargo.upocargo"> -->
-        <!--     <field name="name">Object 2</field> -->
-        <!--     <field name="value">20</field> -->
-        <!--   </record> -->
-        <!--  -->
-        <!--   <record id="object3" model="upocargo.upocargo"> -->
-        <!--     <field name="name">Object 3</field> -->
-        <!--     <field name="value">30</field> -->
-        <!--   </record> -->
-        <!--  -->
-        <!--   <record id="object4" model="upocargo.upocargo"> -->
-        <!--     <field name="name">Object 4</field> -->
-        <!--     <field name="value">40</field> -->
-        <!--   </record> -->
-        <!--  -->
-    </data>
+	<data noupdate="1">
+		<record id="bien0" model="upocargo.upocargobien">
+			<field name="name">Frigorífico LG</field>
+			<field name="metros_cubicos">300</field>
+			<field name="tipo">electrodomestico</field>
+		</record>
+		<record id="bien1" model="upocargo.upocargobien">
+			<field name="name">Armario IKEA</field>
+			<field name="metros_cubicos">100</field>
+			<field name="tipo">mueble</field>
+		</record>
+		<record id="bien2" model="upocargo.upocargobien">
+			<field name="name">Mesita de noche IKEA Swiss</field>
+			<field name="metros_cubicos">50</field>
+			<field name="tipo">mueble</field>
+		</record>
+		<record id="bien3" model="upocargo.upocargobien">
+			<field name="name">PC Asus</field>
+			<field name="metros_cubicos">20</field>
+			<field name="tipo">electrodomestico</field>
+		</record>
+		<record id="bien4" model="upocargo.upocargobien">
+			<field name="name">Tostadora</field>
+			<field name="metros_cubicos">10</field>
+			<field name="tipo">electrodomestico</field>
+		</record>
+
+		<record id="cliente0" model="upocargo.upocargocliente">
+			<field name="name">Alberto</field>
+			<field name="DNI">372637T</field>
+			<field name="apellidos">Gómez Cabrera</field>
+			<field name="direccion">Calle Corredera 12 Arahal</field>
+		</record>
+		<record id="cliente1" model="upocargo.upocargocliente">
+			<field name="name">María</field>
+			<field name="DNI">293837A</field>
+			<field name="apellidos">González Vera</field>
+			<field name="direccion">Calle San Roque 41 Marchena</field>
+		</record>
+		<record id="cliente2" model="upocargo.upocargocliente">
+			<field name="name">Juan</field>
+			<field name="DNI">93847B</field>
+			<field name="apellidos">Herrera Brey</field>
+			<field name="direccion">Calle Fuente 65 Sevilla</field>
+		</record>
+		<record id="cliente3" model="upocargo.upocargocliente">
+			<field name="name">Pepe</field>
+			<field name="DNI">89372U</field>
+			<field name="apellidos">Rodriguez Gallardo</field>
+			<field name="direccion">Calle Faro 3 Paradas</field>
+		</record>
+		<record id="mudanza0" model="upocargo.upocargomudanza">
+			<field name="name">Mudanza 1</field>
+			<field name="precio">500</field>
+			<field name="upocargocliente_id" ref="cliente0"></field>
+			<field name="fecha">5/12/2019 15:00:00</field>
+			<field name="upocargobien_ids"
+				eval="[(6, 0, [bien0, bien2, bien3, ])]"></field>
+		</record>
+		<record id="mudanza1" model="upocargo.upocargomudanza">
+			<field name="name">Mudanza 2</field>
+			<field name="precio">300</field>
+			<field name="upocargocliente_id" ref="cliente1"></field>
+			<field name="fecha">9/12/2019 15:00:00</field>
+						<field name="upocargobien_ids"
+				eval="[(6, 0, [bien1, ])]"></field>
+		</record>
+		<record id="guardamueble0"
+			model="upocargo.upocargoguardamueble">
+			<field name="name">Guardamueble 1</field>
+			<field name="precio">900</field>
+			<field name="upocargocliente_id" ref="cliente2"></field>
+			<field name="fecha_deposito">7/12/2019 15:00:00</field>
+			<field name="fecha_recogida">9/12/2019 19:00:00</field>
+						<field name="upocargobien_ids"
+				eval="[(6, 0, [bien0, bien2, bien1, ])]"></field>
+		</record>
+		<record id="guardamueble1"
+			model="upocargo.upocargoguardamueble">
+			<field name="name">Guardamueble 2</field>
+			<field name="precio">970</field>
+			<field name="upocargocliente_id" ref="cliente3"></field>
+			<field name="fecha_deposito">8/12/2019 15:00:00</field>
+			<field name="fecha_recogida">12/12/2019 19:00:00</field>
+						<field name="upocargobien_ids"
+				eval="[(6, 0, [bien1, bien2, ])]"></field>
+		</record>
+		<record id="guardamueble2"
+			model="upocargo.upocargoguardamueble">
+			<field name="name">Guardamueble 3</field>
+			<field name="precio">1500</field>
+			<field name="upocargocliente_id" ref="cliente0"></field>
+			<field name="fecha_deposito">20/12/2019 15:00:00</field>
+			<field name="fecha_recogida">25/12/2019 19:00:00</field>
+						<field name="upocargobien_ids"
+				eval="[(6, 0, [bien0, bien1, bien3, ])]"></field>
+		</record>
+
+
+	</data>
 </odoo>

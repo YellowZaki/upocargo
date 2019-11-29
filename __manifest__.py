@@ -24,11 +24,12 @@
         'views/upocargoservicio_view.xml',
         'views/upocargomudanza_view.xml',
         'views/upocargoguardamueble_view.xml',
-        'views/upocargocliente_view.xml'
+        'views/upocargocliente_view.xml',
+        'views/upocargobien_view.xml'
         
         #'views/templates.xml',
     ],
     # only loaded in demonstration mode
-    'demo': [],
+    'demo': ['demo/demo.xml'],
     'application': True,
 }

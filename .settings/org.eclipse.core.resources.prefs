@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
 encoding//models/__init__.py=utf-8
 encoding//models/models.py=utf-8
+encoding//models/upocargobien.py=utf-8
 encoding//models/upocargocliente.py=utf-8
 encoding//models/upocargoguardamueble.py=utf-8
 encoding//models/upocargomudanza.py=utf-8
