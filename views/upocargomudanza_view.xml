@@ -2,32 +2,31 @@
 <odoo>
 	<data>
 		<!-- Form View -->
-		<record model="ir.ui.view"
-			id="upocargo_upocargomudanza_form">
+		<record model="ir.ui.view" id="upocargo_upocargomudanza_form">
 			<field name="name">upocargo_upocargomudanza_form</field>
 			<field name="model">upocargo.upocargomudanza</field>
+			<field name="inherit_id"
+				ref="upocargo.upocargo_upocargoservicio_form" />
+			<field name="mode">primary</field>
 			<field name="arch" type="xml">
-				<form string="Formulario de mudanzas">
-					<group string="Mudanza">
-						<field name="name" />
-						<field name="precio" />
-						<field name="fecha" />
-					</group>
-
-				</form>
+				<field name="precio" position="after">
+					<field name="fecha" />
+				</field>
 			</field>
 		</record>
+
+
 		<!-- Tree View -->
-		<record model="ir.ui.view"
-			id="upocargo_upocargomudanza_tree">
+		<record model="ir.ui.view" id="upocargo_upocargomudanza_tree">
 			<field name="name">upocargo_upocargomudanza_tree</field>
 			<field name="model">upocargo.upocargomudanza</field>
+			<field name="inherit_id"
+				ref="upocargo.upocargo_upocargoservicio_tree" />
+			<field name="mode">primary</field>
 			<field name="arch" type="xml">
-				<tree string="Lista de servicios">
-					<field name="name" />
-					<field name="precio" />
+				<field name="upocargocliente_id" position="after">
 					<field name="fecha" />
-				</tree>
+				</field>
 			</field>
 		</record>
 
@@ -56,8 +55,9 @@
 		<menuitem id="upocargo" name="UPOCARGO"
 			action="act_upocargomudanza" />
 		<menuitem name="Servicios" id="servicios_submenu"
-			parent="upocargo" sequence="100" />					
+			parent="upocargo" sequence="100" />
 		<menuitem name="Ver mudanzas" id="upocargomudanza_submenu"
-			parent="servicios_submenu" sequence="100" action="act_upocargomudanza" />
+			parent="servicios_submenu" sequence="100"
+			action="act_upocargomudanza" />
 	</data>
 </odoo> 

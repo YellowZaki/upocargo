@@ -21,6 +21,7 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
+        'views/upocargoservicio_view.xml',
         'views/upocargomudanza_view.xml',
         'views/upocargoguardamueble_view.xml',
         'views/upocargocliente_view.xml'

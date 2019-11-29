@@ -9,42 +9,53 @@
 			<field name="arch" type="xml">
 				<form string="Formulario del Cliente">
 					<group string="Cliente">
-					 	<group>
-							<field name="DNI" />
-					      		<field name="name" /> 
-							<field name="apellidos" />
-							<field name="direccion" />
-                                                </group>
-						<group>
-							<field name="avatar" nolabel="1" widget="image"
-									class="oe_avatar" />
-						</group>
-						<newline />
-					<!---	<field name="servicio_ids" /> -->
+						<notebook colspan="4">
+							<page string="Datos personales">
+								<group>
+									<field name="DNI" />
+									<field name="name" />
+									<field name="apellidos" />
+									<field name="direccion" />
+								</group>
+								<group>
+									<field name="avatar" nolabel="1" widget="image"
+										class="oe_avatar" />
+								</group>
+							</page>
+							<page string="Mudanzas">
+								<group>
+									<field name="upocargomudanza_ids" nolabel="1">
+										<tree>
+											<field name="name" />
+											<field name="precio" />
+											<field name="fecha" />
+										</tree>
+									</field>
+								</group>
+							</page>
+						</notebook>
+
 					</group>
 				</form>
 
 			</field>
 		</record>
 		<!-- Tree View -->
-		<record model="ir.ui.view"
-			id="upocargo_upocargocliente_tree">
+		<record model="ir.ui.view" id="upocargo_upocargocliente_tree">
 			<field name="name">upocargo_upocargocliente_tree</field>
 			<field name="model">upocargo.upocargocliente</field>
 			<field name="arch" type="xml">
 				<tree string="Lista de clientes">
-						<field name="DNI" />
-						<field name="name" />
-						<field name="apellidos" />
-						<field name="direccion" />
-				<!---		<field name="servicio_ids" /> -->
+					<field name="name" />
+					<field name="DNI" />					
+					<field name="apellidos" />
+					<field name="direccion" />
 				</tree>
 			</field>
 		</record>
 
 		<!-- Search View -->
-		<record model="ir.ui.view"
-			id="upocargo_upocargocliente_search">
+		<record model="ir.ui.view" id="upocargo_upocargocliente_search">
 			<field name="name">upocargo_upocargocliente_search</field>
 			<field name="model">upocargo.upocargocliente</field>
 			<field name="type">search</field>
@@ -59,18 +70,15 @@
 		</record>
 
 		<!-- Acciones -->
-		<record id="act_upocargocliente"
-			model="ir.actions.act_window">
+		<record id="act_upocargocliente" model="ir.actions.act_window">
 			<field name="name">Cliente</field>
 			<field name="res_model">upocargo.upocargocliente</field>
 			<field name="view_mode">tree,form,search</field>
 		</record>
 
 		<!-- Menu -->
-		<menuitem id="upocargo" name="UPOCARGO"
-			action="act_upocargocliente" />
 		<menuitem name="Usuarios" id="usuarios_submenu"
-			parent="upocargo" sequence="100" />					
+			parent="upocargo" sequence="100" />
 		<menuitem name="Ver clientes" id="upocargocliente_submenu"
 			parent="usuarios_submenu" sequence="100" action="act_upocargocliente" />
 	</data>

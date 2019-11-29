@@ -6,33 +6,33 @@
 			id="upocargo_upocargoguardamueble_form">
 			<field name="name">upocargo_upocargoguardamueble_form</field>
 			<field name="model">upocargo.upocargoguardamueble</field>
-			<field name="type">form</field>
+			<field name="inherit_id"
+				ref="upocargo.upocargo_upocargoservicio_form" />
+			<field name="mode">primary</field>
 			<field name="arch" type="xml">
-				<form string="Formulario del servicio">
-				<group string="Guardamueble">				
-					<field name="name" />
-					<field name="precio" />
+				<field name="precio" position="after">
 					<field name="fecha_deposito" />
 					<field name="fecha_recogida" />
-					</group>
-				</form>
-				
+				</field>
 			</field>
 		</record>
+		
 		<!-- Tree View -->
 		<record model="ir.ui.view"
 			id="upocargo_upocargoguardamueble_tree">
 			<field name="name">upocargo_upocargoguardamueble_tree</field>
 			<field name="model">upocargo.upocargoguardamueble</field>
+			<field name="inherit_id"
+				ref="upocargo.upocargo_upocargoservicio_tree" />
+			<field name="mode">primary</field>
 			<field name="arch" type="xml">
-				<tree string="Lista de guardamuebles">
-					<field name="name" />
-					<field name="precio" />
+				<field name="upocargocliente_id" position="after">
 					<field name="fecha_deposito" />
 					<field name="fecha_recogida" />
-				</tree>
+				</field>
 			</field>
 		</record>
+
 
 		<!-- Calendar View -->
 		<record model="ir.ui.view"

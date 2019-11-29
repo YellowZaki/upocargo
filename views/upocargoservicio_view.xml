@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<!-- Form View -->
+		<record model="ir.ui.view" id="upocargo_upocargoservicio_form">
+			<field name="name">upocargo_upocargoservicio_form</field>
+			<field name="model">upocargo.upocargoservicio</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de serv">
+					<notebook colspan="4">
+						<page string="Datos del servicio">
+							<group string="Servicio">
+								<field name="name" />
+								<field type="char" name="precio"  />
+							</group>
+						</page>
+						<page string="Cliente">
+							<field name="upocargocliente_id" />
+						</page>
+					</notebook>
+
+				</form>
+			</field>
+		</record>
+
+
+		<!-- Tree View -->
+		<record model="ir.ui.view" id="upocargo_upocargoservicio_tree">
+			<field name="name">upocargo_upocargoservicio_tree</field>
+			<field name="model">upocargo.upocargoservicio</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de servicios">
+					<field name="name" />
+					<field name="precio" />
+					<field name="upocargocliente_id" />
+				</tree>
+			</field>
+		</record>
+
+
+	</data>
+</odoo> 

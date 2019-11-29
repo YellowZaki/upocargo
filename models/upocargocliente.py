@@ -10,5 +10,5 @@ class upocargocliente(models.Model):
     apellidos = fields.Char('Apellidos', size=64, required=True)
     direccion = fields.Char('Direccion', size=128, required=True)
     avatar = fields.Binary('Avatar')
-    #upocargoservicio_ids =  fields.One2many('upocargo.upocargoservicio','Servicios')  
+    upocargomudanza_ids =  fields.One2many('upocargo.upocargomudanza', 'upocargocliente_id', 'Mudanzas')  
 
