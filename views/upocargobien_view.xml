@@ -28,19 +28,30 @@
             <field name="arch" type="xml">
                 <tree string="Bienes">
                         <field name="name" />
-                        <field name="metros_cubicos" />
                         <field name="tipo" />
+                        <field name="metros_cubicos" />                     
                 </tree>
             </field>
         </record>
 
-
+		<!-- Graph View -->
+		<record model="ir.ui.view" id="upocargo_upocargobien_graph">
+			<field name="name">upocargo_upocargobien_graph</field>
+			<field name="model">upocargo.upocargobien</field>
+			<field name="arch" type="xml">
+				<graph type="pie">
+					<field name="tipo" type="row" />
+					<field name="metros_cubicos" type="measure" />
+				</graph>
+			</field>
+		</record>
+		
         <!-- Acciones -->
         <record id="act_upocargobien"
             model="ir.actions.act_window">
             <field name="name">Bien</field>
             <field name="res_model">upocargo.upocargobien</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,graph</field>
         </record>
         
         <!-- Menu -->

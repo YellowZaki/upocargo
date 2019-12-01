@@ -86,7 +86,6 @@
 					<group expand="0" string="Agrupar por...">
 						<filter name="group_by_city" string="Ciudad"
 								context="{'group_by':'ciudad'}" />
-
 					</group>
 				</search>
 			</field>
