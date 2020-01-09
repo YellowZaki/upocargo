@@ -7,7 +7,7 @@
 			<field name="name">upocargo_upocargoguardamueble_form</field>
 			<field name="model">upocargo.upocargoguardamueble</field>
 			<field name="inherit_id"
-				ref="upocargo.upocargo_upocargoservicio_form" />
+				ref="upocargo_upocargoservicio_form" />
 			<field name="mode">primary</field>
 			<field name="arch" type="xml">
 				<field name="precio" position="after">
@@ -23,7 +23,7 @@
 			<field name="name">upocargo_upocargoguardamueble_tree</field>
 			<field name="model">upocargo.upocargoguardamueble</field>
 			<field name="inherit_id"
-				ref="upocargo.upocargo_upocargoservicio_tree" />
+				ref="upocargo_upocargoservicio_tree" />
 			<field name="mode">primary</field>
 			<field name="arch" type="xml">
 				<field name="upocargocliente_id" position="after">

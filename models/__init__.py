@@ -4,3 +4,4 @@ from . import upocargoservicio
 from . import upocargoguardamueble
 from . import upocargomudanza
 from . import upocargocliente
+from . import upocargotransporte

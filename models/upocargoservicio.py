@@ -11,3 +11,7 @@ class upocargoservicio(models.Model):
     upocargocliente_id = fields.Many2one('upocargo.upocargocliente', 'Cliente')   
     
     upocargobien_ids =  fields.Many2many('upocargo.upocargobien',string='Bienes') 
+    
+    upocargotransporte_ids = fields.One2many('upocargo.upocargotransporte', 'upocargoservicio_id', 'Transportes')
+                                             
+                                            # fields.One2many('upocargo.upocargomudanza', 'upocargocliente_id', 'Mudanzas')  )

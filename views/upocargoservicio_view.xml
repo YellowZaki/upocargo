@@ -20,6 +20,9 @@
 						<page string="Bienes">
 							<field name="upocargobien_ids" />
 						</page>
+						<page string="Vehículos">
+							<field name="upocargotransporte_ids" />
+						</page>						
 					</notebook>
 
 				</form>

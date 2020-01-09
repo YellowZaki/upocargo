@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record model="ir.ui.view" id="upocargo_upocargotransporte_form">
+            <field name="name">upocargo_upocargotransporte_form</field>
+            <field name="model">upocargo.upocargotransporte</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Transporte">
+                    <group string="Transporte">
+                         <group>
+                            <field name="matricula" />
+                            <field name="tipo_vehiculo" /> 
+                            <field name="capacidad_metros_cubicos" />
+                        </group>
+                        <newline />
+                    </group>
+                </form>
+
+            </field>
+        </record>
+		<!-- Tree View -->
+        <record model="ir.ui.view"
+            id="upocargo_upocargotransporte_tree">
+            <field name="name">upocargo_upocargotransporte_tree</field>
+            <field name="model">upocargo.upocargotransporte</field>
+            <field name="arch" type="xml">
+                <tree string="Bienes">
+                        <field name="matricula" />
+                        <field name="tipo_vehiculo" />
+                        <field name="capacidad_metros_cubicos" />                     
+                </tree>
+            </field>
+        </record>
+
+		<!-- Graph View -->
+		<record model="ir.ui.view" id="upocargo_upocargotransporte_graph">
+			<field name="name">upocargo_upocargotransporte_graph</field>
+			<field name="model">upocargo.upocargotransporte</field>
+			<field name="arch" type="xml">
+				<graph type="pie">
+					<field name="tipo_vehiculo" type="row" />
+					<field name="capacidad_metros_cubicos" type="measure" />
+				</graph>
+			</field>
+		</record>
+		
+        <!-- Acciones -->
+        <record id="act_upocargotransporte"
+            model="ir.actions.act_window">
+            <field name="name">Transporte</field>
+            <field name="res_model">upocargo.upocargotransporte</field>
+            <field name="view_mode">tree,form,graph</field>
+        </record>
+        
+        <!-- Menu -->
+        <menuitem name="Transporte" id="transporte_submenu"
+            parent="upocargo" sequence="100" />                    
+        <menuitem name="Ver transportes" id="upocargotransporte_submenu"
+            parent="transporte_submenu" sequence="100" action="act_upocargotransporte" />
+    </data>
+</odoo> 

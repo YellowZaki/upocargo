@@ -6,4 +6,5 @@ encoding//models/upocargocliente.py=utf-8
 encoding//models/upocargoguardamueble.py=utf-8
 encoding//models/upocargomudanza.py=utf-8
 encoding//models/upocargoservicio.py=utf-8
+encoding//models/upocargotransporte.py=utf-8
 encoding/__manifest__.py=utf-8

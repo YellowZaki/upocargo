@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 	<data noupdate="1">
+		<record id="transporte0" model="upocargo.upocargotransporte">
+			<field name="matricula">2837ABF</field>
+			<field name="capacidad_metros_cubicos">20000</field>
+			<field name="tipo_vehiculo">trailer</field>
+		</record>	
+		<record id="transporte1" model="upocargo.upocargotransporte">
+			<field name="matricula">0274IQB</field>
+			<field name="capacidad_metros_cubicos">10000</field>
+			<field name="tipo_vehiculo">camion</field>
+		</record>	
+		<record id="transporte2" model="upocargo.upocargotransporte">
+			<field name="matricula">7316RVG</field>
+			<field name="capacidad_metros_cubicos">5000</field>
+			<field name="tipo_vehiculo">furgoneta</field>
+		</record>	
+		
 		<record id="bien0" model="upocargo.upocargobien">
 			<field name="name">Frigorífico LG</field>
 			<field name="metros_cubicos">300</field>
@@ -62,6 +78,8 @@
 			<field name="fecha">5/12/2019 15:00:00</field>
 			<field name="upocargobien_ids"
 				eval="[(6, 0, [bien0, bien2, bien3, ])]"></field>
+			<field name="upocargotransporte_ids"
+				eval="[(6, 0, [transporte0, transporte2, ])]"></field>				
 		</record>
 		<record id="mudanza1" model="upocargo.upocargomudanza">
 			<field name="name">Mudanza 2</field>
@@ -70,6 +88,8 @@
 			<field name="fecha">9/12/2019 15:00:00</field>
 						<field name="upocargobien_ids"
 				eval="[(6, 0, [bien1, ])]"></field>
+			<field name="upocargotransporte_ids"
+				eval="[(6, 0, [transporte0, ])]"></field>					
 		</record>
 		<record id="guardamueble0"
 			model="upocargo.upocargoguardamueble">
@@ -80,6 +100,8 @@
 			<field name="fecha_recogida">9/12/2019 19:00:00</field>
 						<field name="upocargobien_ids"
 				eval="[(6, 0, [bien0, bien2, bien1, ])]"></field>
+			<field name="upocargotransporte_ids"
+				eval="[(6, 0, [transporte1, transporte2, ])]"></field>					
 		</record>
 		<record id="guardamueble1"
 			model="upocargo.upocargoguardamueble">
@@ -90,6 +112,8 @@
 			<field name="fecha_recogida">12/12/2019 19:00:00</field>
 						<field name="upocargobien_ids"
 				eval="[(6, 0, [bien1, bien2, ])]"></field>
+			<field name="upocargotransporte_ids"
+				eval="[(6, 0, [transporte2, transporte0, ])]"></field>					
 		</record>
 		<record id="guardamueble2"
 			model="upocargo.upocargoguardamueble">
@@ -100,6 +124,8 @@
 			<field name="fecha_recogida">25/12/2019 19:00:00</field>
 						<field name="upocargobien_ids"
 				eval="[(6, 0, [bien0, bien1, bien3, ])]"></field>
+			<field name="upocargotransporte_ids"
+				eval="[(6, 0, [transporte0, transporte1, transporte2, ])]"></field>					
 		</record>
 
 
