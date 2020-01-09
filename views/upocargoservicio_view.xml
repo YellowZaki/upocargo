@@ -12,6 +12,7 @@
 							<group string="Servicio">
 								<field name="name" />
 								<field type="char" name="precio" />
+								<field name="metros_cubicos_usados" />								
 							</group>
 						</page>
 						<page string="Cliente">
@@ -42,6 +43,8 @@
 				</tree>
 			</field>
 		</record>
+		
+			
 
 
 	</data>

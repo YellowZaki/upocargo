@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 	<data noupdate="1">
+	
+		<record id="almacen0" model="upocargo.upocargoalmacen">
+			<field name="name">BK-0</field>
+			<field name="direccion">Calle Manza 12, 41600</field>
+			<field name="capacidad_metros_cubicos">500000</field>
+		</record>
+		<record id="almacen1" model="upocargo.upocargoalmacen">
+			<field name="name">BK-1</field>
+			<field name="direccion">Calle Nilla 9, 51300</field>
+			<field name="capacidad_metros_cubicos">100000</field>
+		</record>	
+		<record id="almacen2" model="upocargo.upocargoalmacen">
+			<field name="name">BK-2</field>
+			<field name="direccion">Calle Menta 87, 31900</field>
+			<field name="capacidad_metros_cubicos">200000</field>
+		</record>				
+		<record id="almacen3" model="upocargo.upocargoalmacen">
+			<field name="name">AE-0</field>
+			<field name="direccion">Calle Poleo 44, 21400</field>
+			<field name="capacidad_metros_cubicos">900000</field>
+		</record>
+		
+	
 		<record id="transporte0" model="upocargo.upocargotransporte">
 			<field name="matricula">2837ABF</field>
 			<field name="capacidad_metros_cubicos">20000</field>
@@ -15,7 +38,8 @@
 			<field name="matricula">7316RVG</field>
 			<field name="capacidad_metros_cubicos">5000</field>
 			<field name="tipo_vehiculo">furgoneta</field>
-		</record>	
+		</record>
+		
 		
 		<record id="bien0" model="upocargo.upocargobien">
 			<field name="name">Frigorífico LG</field>
@@ -42,6 +66,12 @@
 			<field name="metros_cubicos">10</field>
 			<field name="tipo">electrodomestico</field>
 		</record>
+		<record id="bien5" model="upocargo.upocargobien">
+			<field name="name">Pecera</field>
+			<field name="metros_cubicos">11000</field>
+			<field name="tipo">mueble</field>
+		</record>		
+
 
 		<record id="cliente0" model="upocargo.upocargocliente">
 			<field name="name">Alberto</field>
@@ -71,6 +101,8 @@
 			<field name="ciudad">Paradas</field>
 			<field name="direccion">Calle Faro 3</field>
 		</record>
+		
+		
 		<record id="mudanza0" model="upocargo.upocargomudanza">
 			<field name="name">Mudanza 1</field>
 			<field name="precio">500</field>
@@ -101,7 +133,8 @@
 						<field name="upocargobien_ids"
 				eval="[(6, 0, [bien0, bien2, bien1, ])]"></field>
 			<field name="upocargotransporte_ids"
-				eval="[(6, 0, [transporte1, transporte2, ])]"></field>					
+				eval="[(6, 0, [transporte1, transporte2, ])]"></field>		
+			<field name="upocargoalmacen_id" ref="almacen2"></field>		
 		</record>
 		<record id="guardamueble1"
 			model="upocargo.upocargoguardamueble">
@@ -113,7 +146,8 @@
 						<field name="upocargobien_ids"
 				eval="[(6, 0, [bien1, bien2, ])]"></field>
 			<field name="upocargotransporte_ids"
-				eval="[(6, 0, [transporte2, transporte0, ])]"></field>					
+				eval="[(6, 0, [transporte2, transporte0, ])]"></field>		
+			<field name="upocargoalmacen_id" ref="almacen1"></field>			
 		</record>
 		<record id="guardamueble2"
 			model="upocargo.upocargoguardamueble">
@@ -125,8 +159,11 @@
 						<field name="upocargobien_ids"
 				eval="[(6, 0, [bien0, bien1, bien3, ])]"></field>
 			<field name="upocargotransporte_ids"
-				eval="[(6, 0, [transporte0, transporte1, transporte2, ])]"></field>					
+				eval="[(6, 0, [transporte0, transporte1, transporte2, ])]"></field>
+			<field name="upocargoalmacen_id" ref="almacen0"></field>					
 		</record>
+		
+		
 
 
 	</data>

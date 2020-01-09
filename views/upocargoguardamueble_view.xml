@@ -13,6 +13,7 @@
 				<field name="precio" position="after">
 					<field name="fecha_deposito" />
 					<field name="fecha_recogida" />
+					<field name="upocargoalmacen_id" />
 				</field>
 			</field>
 		</record>
@@ -29,6 +30,7 @@
 				<field name="upocargocliente_id" position="after">
 					<field name="fecha_deposito" />
 					<field name="fecha_recogida" />
+					<field name="upocargoalmacen_id" />
 				</field>
 			</field>
 		</record>
@@ -61,12 +63,24 @@
 			</field>
 		</record>		
 
+		<!-- Graph View -->
+		<record model="ir.ui.view" id="upocargo_upocargoguardamueble_graph">
+			<field name="name">upocargo_upocargoguardamueble_graph</field>
+			<field name="model">upocargo.upocargoguardamueble</field>
+			<field name="arch" type="xml">
+				<graph type="bar">
+					<field name="name" type="row" />
+					<field name="metros_cubicos_usados" type="measure" />
+				</graph>
+			</field>
+		</record>	
+
 		<!-- Acciones -->
 		<record id="act_upocargoguardamueble"
 			model="ir.actions.act_window">
 			<field name="name">Guardamueble</field>
 			<field name="res_model">upocargo.upocargoguardamueble</field>
-			<field name="view_mode">tree,form,calendar,gantt</field>
+			<field name="view_mode">tree,form,calendar,gantt,graph</field>
 		</record>
 
 		<!-- Menu -->

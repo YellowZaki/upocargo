@@ -2,20 +2,19 @@
 
 from odoo import models, fields, api
 
-class upocargotransporte(models.Model):
-    _name = 'upocargo.upocargotransporte'
+class upocargoalmacen(models.Model):
+    _name = 'upocargo.upocargoalmacen'
 
-    tipo_vehiculo = fields.Selection([('trailer','Tráiler'),('camion','Camión'),('furgoneta','Furgoneta')],'Tipo de vehículo')
-    matricula = fields.Char('Matrícula', size=7, required=True)
+    name = fields.Char('Nombre', size=64, required=True)
+
     capacidad_metros_cubicos = fields.Integer('Capacidad (en metros cúbicos)', default=1)
+    
+    direccion = fields.Char('Dirección', size=64, required=True)
 
-    upocargoservicio_ids = fields.Many2many('upocargo.upocargoservicio', string='Servicios')
+    upocargoguardamueble_ids = fields.One2many('upocargo.upocargoguardamueble', 'upocargoalmacen_id', 'Servicio')
     
     
-    _sql_constraints = [('upocargo_unique_matricula','UNIQUE (matricula)','La matrícula debe ser única')]
     
-      
-      
       
     #Error si se intenta establecer metros cúbicos <= 0
     @api.onchange('capacidad_metros_cubicos')
@@ -26,5 +25,3 @@ class upocargotransporte(models.Model):
                          'warning': {'title': 'Valores incorrectos',
                                      'message': 'Los metros cúbicos deben ser mayor o igual que 1'}}
         return resultado
-    
-    

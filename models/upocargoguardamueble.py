@@ -8,3 +8,5 @@ class upocargoguardamueble(models.Model):
    
     fecha_deposito = fields.Datetime('Fecha del depósito',required=True, autodate = True)
     fecha_recogida = fields.Datetime('Fecha de recogida',required=True, autodate = True)
+    
+    upocargoalmacen_id = fields.Many2one('upocargo.upocargoalmacen','Almacen')

@@ -26,7 +26,8 @@
         'views/upocargoguardamueble_view.xml',
         'views/upocargocliente_view.xml',
         'views/upocargobien_view.xml',
-        'views/upocargotransporte_view.xml'
+        'views/upocargotransporte_view.xml',
+        'views/upocargoalmacen_view.xml'
         
         #'views/templates.xml',
     ],

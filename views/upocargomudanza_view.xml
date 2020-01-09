@@ -43,12 +43,24 @@
 				</calendar>
 			</field>
 		</record>
+		
+		<!-- Graph View -->
+		<record model="ir.ui.view" id="upocargo_upocargoguardamueble_graphb">
+			<field name="name">upocargo_upocargoguardamueble_graphb</field>
+			<field name="model">upocargo.upocargoguardamueble</field>
+			<field name="arch" type="xml">
+				<graph type="bar">
+					<field name="name" type="row" />
+					<field name="metros_cubicos_usados" type="measure" />
+				</graph>
+			</field>
+		</record>	
 
 		<!-- Acciones -->
 		<record id="act_upocargomudanza" model="ir.actions.act_window">
 			<field name="name">Mudanzas</field>
 			<field name="res_model">upocargo.upocargomudanza</field>
-			<field name="view_mode">tree,form,calendar</field>
+			<field name="view_mode">tree,form,calendar,graph</field>
 		</record>
 
 		<!-- Menu -->

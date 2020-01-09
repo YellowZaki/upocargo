@@ -13,3 +13,5 @@ class upocargocliente(models.Model):
     avatar = fields.Binary('Avatar')
     upocargomudanza_ids =  fields.One2many('upocargo.upocargomudanza', 'upocargocliente_id', 'Mudanzas')  
     upocargoguardamueble_ids =  fields.One2many('upocargo.upocargoguardamueble', 'upocargocliente_id', 'Guardamuebles')
+    
+    _sql_constraints = [('upocargo_unique_dni_cliente','UNIQUE (DNI)','El DNI del cliente debe ser único')]

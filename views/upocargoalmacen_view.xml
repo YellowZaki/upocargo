@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record model="ir.ui.view" id="upocargo_upocargoalmacen_form">
+            <field name="name">upocargo_upocargoalmacen_form</field>
+            <field name="model">upocargo.upocargoalmacen</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Almacen">
+                    <group string="Almacen">
+                         <group>
+                            <field name="name" />
+                            <field name="direccion" /> 
+                            <field name="capacidad_metros_cubicos" />
+                        </group>
+                        <newline />
+                    </group>
+                </form>
+
+            </field>
+        </record>
+		<!-- Tree View -->
+        <record model="ir.ui.view"
+            id="upocargo_upocargoalmacen_tree">
+            <field name="name">upocargo_upocargoalmacen_tree</field>
+            <field name="model">upocargo.upocargoalmacen</field>
+            <field name="arch" type="xml">
+                <tree string="Almacen">
+                        <field name="name" />
+                        <field name="direccion" />
+                        <field name="capacidad_metros_cubicos" />                     
+                </tree>
+            </field>
+        </record>
+
+		
+        <!-- Acciones -->
+        <record id="act_upocargoalmacen"
+            model="ir.actions.act_window">
+            <field name="name">Almacen</field>
+            <field name="res_model">upocargo.upocargoalmacen</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- Menu -->
+        <menuitem name="Almacenes" id="almacen_submenu"
+            parent="upocargo" sequence="100" />                    
+        <menuitem name="Ver almacenes" id="upocargoalmacen_submenu"
+            parent="almacen_submenu" sequence="100" action="act_upocargoalmacen" />
+    </data>
+</odoo> 
