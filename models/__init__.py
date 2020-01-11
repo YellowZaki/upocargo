@@ -6,3 +6,4 @@ from . import upocargomudanza
 from . import upocargocliente
 from . import upocargotransporte
 from . import upocargoalmacen
+from . import upocargoempleado

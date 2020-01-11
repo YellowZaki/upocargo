@@ -10,6 +10,8 @@ class upocargoservicio(models.Model):
      
     upocargocliente_id = fields.Many2one('upocargo.upocargocliente', 'Cliente')   
     
+    upocargoempleado_id = fields.Many2one('upocargo.upocargoempleado', 'Empleado')
+    
     upocargobien_ids =  fields.Many2many('upocargo.upocargobien',string='Bienes') 
     
     upocargotransporte_ids = fields.Many2many('upocargo.upocargotransporte', string='Transportes')
