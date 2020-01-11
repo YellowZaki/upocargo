@@ -102,11 +102,34 @@
 			<field name="direccion">Calle Faro 3</field>
 		</record>
 		
+		<record id="empleado1" model="upocargo.upocargoempleado">
+			<field name="name">Fernando</field>
+			<field name="DNI">48283192X</field>
+			<field name="puesto">Encargado</field>
+		</record>
+		<record id="empleado2" model="upocargo.upocargoempleado">
+			<field name="name">Patricia</field>
+			<field name="DNI">59392102Z</field>
+			<field name="puesto">Conductor</field>
+		</record>
+		<record id="empleado3" model="upocargo.upocargoempleado">
+			<field name="name">Antonio</field>
+			<field name="DNI">19238049H</field>
+			<field name="puesto">Conductor</field>
+		</record>
+		<record id="empleado4" model="upocargo.upocargoempleado">
+			<field name="name">Gonzalo</field>
+			<field name="DNI">48291843K</field>
+			<field name="puesto">Operario</field>
+		</record>
+		
 		
 		<record id="mudanza0" model="upocargo.upocargomudanza">
 			<field name="name">Mudanza 1</field>
 			<field name="precio">500</field>
 			<field name="upocargocliente_id" ref="cliente0"></field>
+			<field name="upocargoempleado_id" ref="empleado1"></field>
+			<field name="upocargoempleado_id" ref="empleado2"></field>
 			<field name="fecha">5/12/2019 15:00:00</field>
 			<field name="upocargobien_ids"
 				eval="[(6, 0, [bien0, bien2, bien3, ])]"></field>
@@ -117,6 +140,7 @@
 			<field name="name">Mudanza 2</field>
 			<field name="precio">300</field>
 			<field name="upocargocliente_id" ref="cliente1"></field>
+			<field name="upocargoempleado_id" ref="empleado3"></field>
 			<field name="fecha">9/12/2019 15:00:00</field>
 						<field name="upocargobien_ids"
 				eval="[(6, 0, [bien1, ])]"></field>
@@ -128,6 +152,8 @@
 			<field name="name">Guardamueble 1</field>
 			<field name="precio">900</field>
 			<field name="upocargocliente_id" ref="cliente2"></field>
+			<field name="upocargoempleado_id" ref="empleado1"></field>
+			<field name="upocargoempleado_id" ref="empleado4"></field>
 			<field name="fecha_deposito">7/12/2019 15:00:00</field>
 			<field name="fecha_recogida">9/12/2019 19:00:00</field>
 						<field name="upocargobien_ids"
@@ -141,6 +167,7 @@
 			<field name="name">Guardamueble 2</field>
 			<field name="precio">970</field>
 			<field name="upocargocliente_id" ref="cliente3"></field>
+			<field name="upocargoempleado_id" ref="empleado3"></field>
 			<field name="fecha_deposito">8/12/2019 15:00:00</field>
 			<field name="fecha_recogida">12/12/2019 19:00:00</field>
 						<field name="upocargobien_ids"
@@ -154,6 +181,7 @@
 			<field name="name">Guardamueble 3</field>
 			<field name="precio">1500</field>
 			<field name="upocargocliente_id" ref="cliente0"></field>
+			<field name="upocargoempleado_id" ref="empleado2"></field>
 			<field name="fecha_deposito">20/12/2019 15:00:00</field>
 			<field name="fecha_recogida">25/12/2019 19:00:00</field>
 						<field name="upocargobien_ids"

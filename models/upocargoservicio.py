@@ -19,6 +19,9 @@ class upocargoservicio(models.Model):
                               default='sinfactura')                                             
     upocargofactura_id = fields.Many2one('upocargo.upocargofactura', 'Factura')
     
+
+    upocargoempleado_id = fields.Many2one('upocargo.upocargoempleado', 'Empleado')
+    
     
     
     

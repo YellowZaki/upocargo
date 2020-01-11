@@ -26,6 +26,9 @@
 						<page string="Cliente">
 							<field name="upocargocliente_id" />
 						</page>
+						<page string = "Empleado">
+							<field name="upocargoempleado_id" />
+						</page>
 						<page string="Bienes">
 							<field name="upocargobien_ids" />
 						</page>
@@ -48,6 +51,7 @@
 					<field name="name" />
 					<field name="precio" />
 					<field name="upocargocliente_id" />
+					<field name="upocargoempleado_id" />
 					<field name="state" />
 				</tree>
 			</field>

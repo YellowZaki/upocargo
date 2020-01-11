@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<!-- Form View -->
+		<record model="ir.ui.view" id="upocargo_upocargoempleado_form">
+			<field name="name">upocargo_upocargoempleado_form</field>
+			<field name="model">upocargo.upocargoempleado</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Formulario del Empleado">
+					<group string="Empleado">
+						<notebook colspan="4">
+							<page string="Datos personales">
+								<group>
+									<field name="DNI" />
+									<field name="name" />
+									<field name="puesto" />
+								</group>
+								<group>
+									<field name="avatar" nolabel="1" widget="image"
+										class="oe_avatar" />
+								</group>
+							</page>
+							<page string="Mudanzas">
+								<group>
+									<field name="upocargomudanza_ids" nolabel="1">
+										<tree>
+											<field name="name" />
+											<field name="fecha" />
+										</tree>
+									</field>
+								</group>
+							</page>
+							<page string="Guardamuebles">
+								<group>
+									<field name="upocargoguardamueble_ids" nolabel="1">
+										<tree>
+											<field name="name" />
+										</tree>
+									</field>
+								</group>
+							</page>
+						</notebook>
+
+					</group>
+				</form>
+
+			</field>
+		</record>
+		<!-- Tree View -->
+		<record model="ir.ui.view" id="upocargo_upocargoempleado_tree">
+			<field name="name">upocargo_upocargoempleado_tree</field>
+			<field name="model">upocargo.upocargoempleado</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de empleados">
+					<field name="DNI" />
+					<field name="name" />
+					<field name="puesto" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Search View -->
+		<record model="ir.ui.view" id="upocargo_upocargoempleado_search">
+			<field name="name">upocargo_upocargoempleado_search</field>
+			<field name="model">upocargo.upocargoempleado</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Búsqueda">
+					<field name="DNI" />
+					<field name="name" />
+					<field name="puesto" />
+					<separator orientation="vertical" />
+					<filter string="Participa en servicio de guardamuebles" domain="[('upocargoguardamueble_ids','>', 0)]" />
+					<filter string="Participa en servicio de mudanzas" domain="[('upocargomudanza_ids','>', 0)]" />
+					<separator orientation="vertical" />
+					<group expand="0" string="Agrupar por...">
+						<filter name="group_by_position" string="Puesto"
+								context="{'group_by':'puesto'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- Acciones -->
+		<record id="act_upocargoempleado" model="ir.actions.act_window">
+			<field name="name">empleado</field>
+			<field name="res_model">upocargo.upocargoempleado</field>
+			<field name="view_mode">tree,form,search</field>
+		</record>
+
+		<!-- Menu -->
+		<menuitem name="Usuarios" id="usuarios_submenu"
+			parent="upocargo" sequence="100" />
+		<menuitem name="Ver empleados" id="upocargoempleado_submenu"
+			parent="usuarios_submenu" sequence="100" action="act_upocargoempleado" />
+	</data>
+</odoo> 

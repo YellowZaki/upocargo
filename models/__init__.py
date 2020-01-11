@@ -7,3 +7,4 @@ from . import upocargocliente
 from . import upocargotransporte
 from . import upocargoalmacen
 from . import upocargofactura
+from . import upocargoempleado

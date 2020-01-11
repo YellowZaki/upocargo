@@ -28,7 +28,8 @@
         'views/upocargobien_view.xml',
         'views/upocargotransporte_view.xml',
         'views/upocargoalmacen_view.xml',
-        'views/upocargofactura_view.xml'
+        'views/upocargofactura_view.xml',
+        'views/upocargoempleado_view.xml'
         
         #'views/templates.xml',
     ],
