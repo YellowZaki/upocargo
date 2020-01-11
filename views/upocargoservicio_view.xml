@@ -7,12 +7,20 @@
 			<field name="model">upocargo.upocargoservicio</field>
 			<field name="arch" type="xml">
 				<form string="Formulario de serv">
+					<header>
+						<button name="btn_generararFactura" string="Generar factura"
+							type="object" class="oe_highlight" states="sinfactura" />
+						<button name="btn_cancelar" string="Cancelar"
+							type="object" class="oe_highlight" states="sinfactura,pagopendiente" />
+							<field name='state' widget='statusbar' />
+					</header>					
 					<notebook colspan="4">
 						<page string="Datos del servicio">
 							<group string="Servicio">
 								<field name="name" />
 								<field type="char" name="precio" />
-								<field name="metros_cubicos_usados" />								
+								<field name="metros_cubicos_usados" />	
+								<field name="upocargofactura_id" options="{'no_quick_create': True, 'no_create_edit' : True}" />							
 							</group>
 						</page>
 						<page string="Cliente">
@@ -40,6 +48,7 @@
 					<field name="name" />
 					<field name="precio" />
 					<field name="upocargocliente_id" />
+					<field name="state" />
 				</tree>
 			</field>
 		</record>

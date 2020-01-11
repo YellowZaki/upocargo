@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<!-- Form View -->
+		<record model="ir.ui.view" id="upocargo_upocargofactura_form">
+			<field name="name">upocargo_upocargofactura_form</field>
+			<field name="model">upocargo.upocargofactura</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Factura" create="false" edit="false"
+					delete="false">
+					<header>
+						<button name="btn_pagarFactura"
+							string="Pagar factura" type="object" class="oe_highlight"
+							states="creada" />
+
+						<field name='state' widget='statusbar' />
+					</header>
+					<group string="Factura">
+						<group>
+							<field name="state" options="{'no_edit': True}" />
+							<field name="fecha_creacion" />
+							<field name="fecha_limite" />
+							<field name="fecha_pago" />
+							<field name="upocargomudanza_ids" attrs="{'invisible':[('upocargomudanza_ids', '=', False)]}"/>
+							<field name="upocargoguardamueble_ids" attrs="{'invisible':[('upocargoguardamueble_ids', '=', False)]}"/>
+						</group>
+						<newline />
+					</group>
+				</form>
+
+			</field>
+		</record>
+		<!-- Tree View -->
+		<record model="ir.ui.view" id="upocargo_upocargofactura_tree">
+			<field name="name">upocargo_upocargofactura_tree</field>
+			<field name="model">upocargo.upocargofactura</field>
+			<field name="arch" type="xml">
+				<tree create="false" delete="false" string="Facturas">
+					<field name="state" />
+					<field name="fecha_creacion" />
+					<field name="fecha_limite" />
+					<field name="fecha_pago" />
+				</tree>
+			</field>
+		</record>
+
+
+		<!-- Acciones -->
+		<record id="act_upocargofactura" model="ir.actions.act_window">
+			<field name="name">Factura</field>
+			<field name="res_model">upocargo.upocargofactura</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- Menu -->
+		<menuitem name="Factura" id="factura_submenu"
+			parent="upocargo" sequence="100" />
+		<menuitem name="Ver facturas" id="upocargofactura_submenu"
+			parent="factura_submenu" sequence="100" action="act_upocargofactura" />
+	</data>
+</odoo> 
