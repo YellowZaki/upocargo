@@ -22,8 +22,8 @@
 							<field name="fecha_creacion" />
 							<field name="fecha_limite" />
 							<field name="fecha_pago" />
-							<field name="upocargomudanza_ids" attrs="{'invisible':[('upocargomudanza_ids', '=', False)]}"/>
-							<field name="upocargoguardamueble_ids" attrs="{'invisible':[('upocargoguardamueble_ids', '=', False)]}"/>
+							<field name="upocargomudanza_ids"/>
+							<field name="upocargoguardamueble_ids"/>
 						</group>
 						<newline />
 					</group>
@@ -44,13 +44,27 @@
 				</tree>
 			</field>
 		</record>
+		
+		<!-- Calendar View -->
+		<record model="ir.ui.view"
+			id="upocargo_upocargofactura_calendar">
+			<field name="name">upocargo_upocargofactura_calendar</field>
+			<field name="model">upocargo.upocargofactura</field>
+			<field name="type">calendar</field>
+			<field name="arch" type="xml">
+				<calendar string="Facturas" date_start="fecha_creacion" mode="month">
+					<field name="state" />
+					<field name="fecha_limite" />
+				</calendar>
+			</field>
+		</record>
 
 
 		<!-- Acciones -->
 		<record id="act_upocargofactura" model="ir.actions.act_window">
 			<field name="name">Factura</field>
 			<field name="res_model">upocargo.upocargofactura</field>
-			<field name="view_mode">tree,form</field>
+			<field name="view_mode">tree,form,calendar</field>
 		</record>
 
 		<!-- Menu -->

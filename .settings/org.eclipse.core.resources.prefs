@@ -4,6 +4,7 @@ encoding//models/models.py=utf-8
 encoding//models/upocargoalmacen.py=utf-8
 encoding//models/upocargobien.py=utf-8
 encoding//models/upocargocliente.py=utf-8
+encoding//models/upocargoempleado.py=utf-8
 encoding//models/upocargofactura.py=utf-8
 encoding//models/upocargoguardamueble.py=utf-8
 encoding//models/upocargomudanza.py=utf-8

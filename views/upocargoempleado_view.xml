@@ -84,7 +84,7 @@
 
 		<!-- Acciones -->
 		<record id="act_upocargoempleado" model="ir.actions.act_window">
-			<field name="name">empleado</field>
+			<field name="name">Empleado</field>
 			<field name="res_model">upocargo.upocargoempleado</field>
 			<field name="view_mode">tree,form,search</field>
 		</record>

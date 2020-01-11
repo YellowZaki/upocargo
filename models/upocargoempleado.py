@@ -7,7 +7,7 @@ class upocargoempleado(models.Model):
 
     DNI = fields.Char('DNI', size=9, required=True)
     name = fields.Char('Nombre', size=64, required=True)
-    puesto = fields.Char('Puesto', size=64, required=True)
+    puesto = fields.Selection([('encargado','Encargado'),('conductor','Conductor'),('operario','Operario')],'Puesto')
     avatar = fields.Binary('Avatar')
     upocargomudanza_ids =  fields.One2many('upocargo.upocargomudanza', 'upocargoempleado_id', 'Mudanzas')  
     upocargoguardamueble_ids =  fields.One2many('upocargo.upocargoguardamueble', 'upocargoempleado_id', 'Guardamuebles')

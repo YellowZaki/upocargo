@@ -101,26 +101,31 @@
 			<field name="ciudad">Paradas</field>
 			<field name="direccion">Calle Faro 3</field>
 		</record>
-		
+
+		<record id="empleado0" model="upocargo.upocargoempleado">
+			<field name="name">Javier</field>
+			<field name="DNI">283712625X</field>
+			<field name="puesto">encargado</field>
+		</record>		
 		<record id="empleado1" model="upocargo.upocargoempleado">
 			<field name="name">Fernando</field>
 			<field name="DNI">48283192X</field>
-			<field name="puesto">Encargado</field>
+			<field name="puesto">encargado</field>
 		</record>
 		<record id="empleado2" model="upocargo.upocargoempleado">
 			<field name="name">Patricia</field>
 			<field name="DNI">59392102Z</field>
-			<field name="puesto">Conductor</field>
+			<field name="puesto">conductor</field>
 		</record>
 		<record id="empleado3" model="upocargo.upocargoempleado">
 			<field name="name">Antonio</field>
 			<field name="DNI">19238049H</field>
-			<field name="puesto">Conductor</field>
+			<field name="puesto">conductor</field>
 		</record>
 		<record id="empleado4" model="upocargo.upocargoempleado">
 			<field name="name">Gonzalo</field>
 			<field name="DNI">48291843K</field>
-			<field name="puesto">Operario</field>
+			<field name="puesto">operario</field>
 		</record>
 		
 		
@@ -129,7 +134,6 @@
 			<field name="precio">500</field>
 			<field name="upocargocliente_id" ref="cliente0"></field>
 			<field name="upocargoempleado_id" ref="empleado1"></field>
-			<field name="upocargoempleado_id" ref="empleado2"></field>
 			<field name="fecha">5/12/2019 15:00:00</field>
 			<field name="upocargobien_ids"
 				eval="[(6, 0, [bien0, bien2, bien3, ])]"></field>
@@ -152,7 +156,6 @@
 			<field name="name">Guardamueble 1</field>
 			<field name="precio">900</field>
 			<field name="upocargocliente_id" ref="cliente2"></field>
-			<field name="upocargoempleado_id" ref="empleado1"></field>
 			<field name="upocargoempleado_id" ref="empleado4"></field>
 			<field name="fecha_deposito">7/12/2019 15:00:00</field>
 			<field name="fecha_recogida">9/12/2019 19:00:00</field>
