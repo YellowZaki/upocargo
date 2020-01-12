@@ -53,6 +53,7 @@
 			<field name="model">upocargo.upocargoempleado</field>
 			<field name="arch" type="xml">
 				<tree string="Lista de empleados">
+					<field name="avatar" widget="image" height="45" width="45"/>
 					<field name="DNI" />
 					<field name="name" />
 					<field name="puesto" />
@@ -67,6 +68,7 @@
 			<field name="type">search</field>
 			<field name="arch" type="xml">
 				<search string="Búsqueda">
+					<field name="avatar" widget="image" height="45" width="45"/>
 					<field name="DNI" />
 					<field name="name" />
 					<field name="puesto" />

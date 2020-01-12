@@ -20,7 +20,7 @@ class upocargoservicio(models.Model):
     upocargofactura_id = fields.Many2one('upocargo.upocargofactura', 'Factura')
     
 
-    upocargoempleado_id = fields.Many2one('upocargo.upocargoempleado', 'Empleado')
+    upocargoempleado_id = fields.Many2many('upocargo.upocargoempleado', string='Empleados')
     
     
     
