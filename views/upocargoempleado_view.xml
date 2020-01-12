@@ -34,7 +34,6 @@
 			<field name="model">upocargo.upocargoempleado</field>
 			<field name="arch" type="xml">
 				<tree string="Lista de empleados">
-					<field name="avatar" widget="image" height="45" width="45"/>
 					<field name="DNI" />
 					<field name="name" />
 					<field name="puesto" />
@@ -49,13 +48,10 @@
 			<field name="type">search</field>
 			<field name="arch" type="xml">
 				<search string="Búsqueda">
-					<field name="avatar" widget="image" height="45" width="45"/>
 					<field name="DNI" />
 					<field name="name" />
 					<field name="puesto" />
 					<separator orientation="vertical" />
-					<filter string="Participa en servicio de guardamuebles" domain="[('upocargoguardamueble_ids','>', 0)]" />
-					<filter string="Participa en servicio de mudanzas" domain="[('upocargomudanza_ids','>', 0)]" />
 					<separator orientation="vertical" />
 					<group expand="0" string="Agrupar por...">
 						<filter name="group_by_position" string="Puesto"

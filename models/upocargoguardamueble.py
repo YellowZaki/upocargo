@@ -25,3 +25,16 @@ class upocargoguardamueble(models.Model):
         if self.fecha_deposito and self.fecha_recogida:
             if datetime.strptime(self.fecha_recogida, "%Y-%m-%d %H:%M:%S") < datetime.strptime(self.fecha_deposito, "%Y-%m-%d %H:%M:%S"):
                 raise models.ValidationError('La fecha de recogida debe ser posterior a la de depósito')  
+            
+            
+    #Comprobar si hay capacidad necesaria en el almacen
+    @api.one
+    @api.constrains('upocargoalmacen_id','upocargobien_ids')
+    def _checkMetrosCubicosAvailableForAlmacen(self):
+        #Si aun no se le ha asignado ningun vehiculo, dejar pasar
+        metros_cubicos_en_almacen = 0
+        if self.upocargoalmacen_id:
+            for guardamueble in self.upocargoalmacen_id.upocargoguardamueble_ids:
+                metros_cubicos_en_almacen = metros_cubicos_en_almacen + guardamueble.metros_cubicos_usados
+            if metros_cubicos_en_almacen > self.upocargoalmacen_id.capacidad_metros_cubicos:
+                raise models.ValidationError('El almacén ha superado su capacidad máxima') 

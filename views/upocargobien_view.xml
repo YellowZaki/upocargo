@@ -46,12 +46,28 @@
 			</field>
 		</record>
 		
+		
+		<!-- Search View -->
+		<record model="ir.ui.view" id="upocargo_upocargobien_search">
+			<field name="name">upocargo_upocargobien_search</field>
+			<field name="model">upocargo.upocargobien</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Búsqueda">
+					<group expand="0" string="Agrupar por...">
+						<filter name="group_by_position" string="Tipo"
+								context="{'group_by':'tipo'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		
         <!-- Acciones -->
         <record id="act_upocargobien"
             model="ir.actions.act_window">
             <field name="name">Bien</field>
             <field name="res_model">upocargo.upocargobien</field>
-            <field name="view_mode">tree,form,graph</field>
+            <field name="view_mode">tree,form,graph,search</field>
         </record>
         
         <!-- Menu -->

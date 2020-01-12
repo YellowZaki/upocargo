@@ -27,7 +27,7 @@
 							<field name="upocargocliente_id" />
 						</page>
 						<page string = "Empleado">
-							<field name="upocargoempleado_id" />
+							<field name="upocargoempleado_ids" />
 						</page>
 						<page string="Bienes">
 							<field name="upocargobien_ids" />
@@ -50,8 +50,8 @@
 				<tree string="Lista de servicios">
 					<field name="name" />
 					<field name="precio" />
+					<field name="metros_cubicos_usados" />	
 					<field name="upocargocliente_id" />
-					<field name="upocargoempleado_id" />
 					<field name="state" />
 				</tree>
 			</field>

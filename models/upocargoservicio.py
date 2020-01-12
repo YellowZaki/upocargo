@@ -20,7 +20,7 @@ class upocargoservicio(models.Model):
     upocargofactura_id = fields.Many2one('upocargo.upocargofactura', 'Factura')
     
 
-    upocargoempleado_id = fields.Many2many('upocargo.upocargoempleado', string='Empleados')
+    upocargoempleado_ids = fields.Many2many('upocargo.upocargoempleado', string='Empleados')
     
     
     
@@ -89,7 +89,7 @@ class upocargoservicio(models.Model):
             
             
     #Una vez la factura está pagada/cancelada, ya no se puede editar
-    @api.onchange('name','precio','upocargocliente_id', 'upocargobien_ids','upocargotransporte_ids')
+    @api.onchange('name','precio','upocargocliente_id', 'upocargobien_ids','upocargotransporte_ids','upocargoempleado_ids')
     def onchange_fields(self):
         if self.state == 'pagado' or self.state == 'cancelado':
             raise models.ValidationError('No puedes editar los datos una vez el servicio está pagado o cancelado')   
